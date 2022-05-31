@@ -1,0 +1,203 @@
+body {
+
+    word-wrap: break-word;
+    background-image: url(https://i.imgur.com/ZkJqyE5.jpg);
+    background-size: 100% 100vh;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body>div>div:nth-child(1) {
+    display: flex;
+
+
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    margin: 0px;
+}
+
+img {
+    height: 50rem;
+    width: 35%;
+}
+
+h1 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    color: ghostwhite;
+    margin: 0;
+}
+
+p {
+    color: red;
+    font-size: 20px;
+    width: 61%;
+    text-align: center;
+    border: 2px solid #ff0000eb;
+    border-radius: 5px;
+    background-image: url(https://c.tenor.com/lpoNBPJhrmkAAAAC/lightning-clouds.gif);
+    height: 10vh;
+    margin-top: -2px;
+    display: inline-table;
+}
+
+a.btn.btn-default {
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+    width: 16%;
+    height: 6vh;
+    font-size: 25px;
+    margin: 5px;
+
+}
+
+.container {
+    width: 94%;
+}
+
+form {
+
+    height: 6vh;
+    display: flow-root;
+    text-align: center;
+}
+
+div:nth-child(1)>div>a {
+
+
+    color: ghostwhite;
+    font-size: 2.5vh;
+    margin-top: 14px;
+    margin-right: 10px;
+    padding-top: 0.5vh;
+    background: #00000063;
+    height: 5vh;
+    width: 7%;
+    border: 2px solid;
+    text-align: center;
+}
+
+label {
+    color: white;
+    font-size: 25px;
+}
+
+::before {
+    color: red;
+}
+
+input[type="text"] {
+    width: 100%;
+    height: 5vh;
+    border-radius: 10px;
+}
+
+div:nth-child(2)>h3 {
+    color: gold;
+}
+
+div:nth-child(1)>div>a {
+    color: white;
+    text-decoration: none;
+    font-size: 2.1vh;
+    border: black solid 4px;
+    border-style: double;
+    background-color: black;
+    border-radius: 9px;
+}
+
+h2 {
+    color: ghostwhite;
+    font-size: 2em;
+    text-align: center;
+}
+
+input[type="text"] {
+    width: 35%;
+    height: 4.8vh;
+    border-radius: 6px;
+    margin: 0;
+}
+
+div:nth-child(2)>h3 {
+    color: gold;
+    text-align: center;
+    margin: 0;
+    font-size: 2.3em;
+}
+
+span {
+    color: ghostwhite;
+    font-size: 1.9vh;
+}
+
+div:nth-child(1)>div>h3 {
+    color: ghostwhite;
+    font-size: 2.5vh;
+    margin-top: 14px;
+    margin-right: 10px;
+    padding-top: 1vh;
+    background: #00000066;
+    height: 5vh;
+    width: 7%;
+    border: 2px solid;
+    text-align: center;
+}
+
+section {
+    background-image: url(https://c.tenor.com/uIPn_roMlvcAAAAC/fortnite-volcano-eruption-fortnite-volcano.gif);
+    background-repeat: no-repeat;
+    background-size: 100% 10vh;
+    width: 100%;
+    height: 10vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div:nth-child(1)>section>a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.3em;
+    border: black solid 4px;
+    border-style: double;
+    background-color: #0000002b;
+    border-radius: 9px;
+    text-align: center;
+    margin-top: 19px;
+    width: 5%;
+}
+
+div:nth-child(2)>div:nth-child(1)>div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+body>div>div:nth-child(2)>div:nth-child(1) {
+    height: 11vh;
+}
+
+div:nth-child(2)>div:nth-child(2) {}
+
+button {
+    font-size: 1.4em;
+    height: 4.6vh;
+    border-radius: 4px;
+}
+
+input.score {
+    font-size: 1.5em;
+    height: 4.6vh;
+    border-radius: 5px;
+}

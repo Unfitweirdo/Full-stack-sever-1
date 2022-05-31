@@ -1,0 +1,37 @@
+body {
+    padding-top: 80px;
+    word-wrap: break-word;
+    background-image: url(https://d2bgjx2gb489de.cloudfront.net/gbb-blogs/wp-content/uploads/2022/02/17132917/Malin_Head_Donegal_County_Ireland-870x400.jpg);
+    background-size: 100% 100vh;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+}
+
+p {
+    margin: 10px;
+    color: white;
+    font-size: 25px;
+}
+
+a {
+    color: hsl(0deg 88% 48%);
+    text-decoration: none;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 25px;
+    color: aliceblue;
+}
+
+h1, .h1 {
+    font-size: 36px;
+    color: red;
+}
+
+span.fa.fa-sign-in {
+    color: black;
+}
