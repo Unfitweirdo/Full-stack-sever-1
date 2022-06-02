@@ -1,10 +1,10 @@
 body {
-
     word-wrap: break-word;
     background-image: url(https://i.imgur.com/ZkJqyE5.jpg);
-    background-size: 100% 100vh;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
-    height: 100vh;
+    
+    height: auto;
     width: 100%;
     margin: 0;
     padding: 0;
@@ -187,8 +187,6 @@ div:nth-child(2)>div:nth-child(1)>div {
 body>div>div:nth-child(2)>div:nth-child(1) {
     height: 11vh;
 }
-
-div:nth-child(2)>div:nth-child(2) {}
 
 button {
     font-size: 1.4em;

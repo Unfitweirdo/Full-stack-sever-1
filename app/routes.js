@@ -9,11 +9,11 @@ module.exports = function(app, passport, db) {
 
     // PROFILE SECTION =========================
     app.get('/profile', isLoggedIn, function(req, res) {
-        db.collection('reviews').find().toArray((err, result) => {
+        db.collection('review').find().toArray((err, result) => {
           if (err) return console.log(err)
           res.render('profile.ejs', {
             user : req.user,
-            reviews: result
+            review: result
           })
         })
     });
@@ -26,19 +26,20 @@ module.exports = function(app, passport, db) {
 
 // message board routes ===============================================================
 
-    app.post('/reviews', (req, res) => {
-      db.collection('reviews').save({ name: req.body.name, review: req.body.review, score: req.body.starScore, thumbsUp: 0, thumbsDown: 0}, (err, result) => {
+    app.post('/review', (req, res) => {
+      db.collection('review').save({ name: req.body.name, review: req.body.review, reviewScore: req.body.reviewScore, thumbsUp: 0
+}, (err, result) => {
         if (err) return console.log(err)
         console.log('saved to database')
         res.redirect('/profile')
       })
     })
 
-    app.put('/reviews', (req, res) => {
-      db.collection('reviews')
-        .findOneAndUpdate({ name: req.body.name, review: req.body.review, score: req.body.starScore}, {
+    app.put('/review', (req, res) => {
+      db.collection('review')
+        .findOneAndUpdate({ name: req.body.name, review: req.body.review, reviewScore: req.body.reviewScore, thumbsUp: 0 }, {
         $set: {
-          thumbsUp:req.body.thumbsUp + 1
+          thumbsUp: req.body.thumbsUp + 1
         }
       }, {
         sort: {_id: -1},
@@ -49,11 +50,11 @@ module.exports = function(app, passport, db) {
       })
     })
 
-  app.put('/reviewsDown', (req, res) => {
-    db.collection('reviews')
-      .findOneAndUpdate({ name: req.body.name, review: req.body.review, starScore: req.body.starScore }, {
+  app.put('/reviewDown', (req, res) => {
+    db.collection('review')
+      .findOneAndUpdate({ name: req.body.name, review: req.body.review, reviewScore: req.body.reviewScore, thumbsUp: 0}, {
         $set: {
-          thumbsDown: req.body.thumbsUp - 1
+          thumbsUp: req.body.thumbsUp - 1
         }
       }, {
         sort: { _id: -1 },
@@ -63,11 +64,12 @@ module.exports = function(app, passport, db) {
         res.send(result)
       })
   })
-  app.put('/reviewsScore', (req, res) => {
-    db.collection('reviews')
-      .findOneAndUpdate({ name: req.body.name, review: req.body.review, starScore: req.body.starScore }, {
+  app.put('/reviewScore', (req, res) => {
+    const value = document.getElementsByClassName('reviewScore').innertext
+    db.collection('review')
+      .findOneAndUpdate({ name: req.body.name, review: req.body.review, reviewScore: req.body.reviewScore }, {
         $set: {
-          starScore: req.body.starScore + `${score}`
+          reviewScore: req.body.reviewScore
         }
       }, {
         sort: { _id: -1 },
@@ -78,8 +80,8 @@ module.exports = function(app, passport, db) {
       })
   })
 
-    app.delete('/reviews', (req, res) => {
-      db.collection('reviews').findOneAndDelete({name: req.body.name, review: req.body.review}, (err, result) => {
+    app.delete('/review', (req, res) => {
+      db.collection('review').findOneAndDelete({ name: req.body.name, review: req.body.review, reviewScore: req.body.reviewScore, }, (err, result) => {
         if (err) return res.send(500, err)
         res.send('Message deleted!')
       })
@@ -100,7 +102,7 @@ module.exports = function(app, passport, db) {
         app.post('/login', passport.authenticate('local-login', {
             successRedirect : '/profile', // redirect to the secure profile section
             failureRedirect : '/login', // redirect back to the signup page if there is an error
-            failureFlash : true // allow flash reviews
+            failureFlash : true // allow flash review
         }));
 
         // SIGNUP =================================
@@ -113,7 +115,7 @@ module.exports = function(app, passport, db) {
         app.post('/signup', passport.authenticate('local-signup', {
             successRedirect : '/profile', // redirect to the secure profile section
             failureRedirect : '/signup', // redirect back to the signup page if there is an error
-            failureFlash : true // allow flash reviews
+            failureFlash : true // allow flash review
         }));
 
 // =============================================================================
